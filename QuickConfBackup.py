@@ -11,10 +11,8 @@ from netmiko.ssh_exception import NetMikoTimeoutException
 from paramiko.ssh_exception import SSHException
 from netmiko.ssh_exception import AuthenticationException
 
-"""
 username = input('Enter your SSH username: ')
 password = getpass()
-"""
 
 with open('devices_file') as f:
     devices_list = f.read().splitlines()
@@ -25,8 +23,8 @@ for devices in devices_list:
     ios_device = {
         'device_type': 'cisco_ios',
         'ip': ip_address_of_device,
-        'username': "swanny",
-        'password': "python123"
+        'username': username,
+        'password': password
     }
 
     try:
